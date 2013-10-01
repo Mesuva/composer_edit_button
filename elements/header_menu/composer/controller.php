@@ -4,7 +4,7 @@ class ComposerConcreteInterfaceMenuItemController extends ConcreteInterfaceMenuI
    public function displayItem() {
       $page = Page::getCurrentPage();
 	  $pageType = CollectionType::getByHandle($page->getCollectionTypeHandle());
-      return (!$page->isEditMode() &&  $pageType && $pageType->isCollectionTypeIncludedInComposer());
+      return (!$page->isEditMode() &&  $pageType && $pageType->isCollectionTypeIncludedInComposer() && !$page->isMasterCollection());
    }
 }
 ?>
